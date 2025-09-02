@@ -7,26 +7,28 @@ plugins {
 
 android {
     namespace = "com.alarm.local_notification"
-    compileSdk 34
+    compileSdk = 35
     ndkVersion = flutter.ndkVersion
 
     compileOptions {
-        coreLibraryDesugaringEnabled = true //플러그인 비활성화
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
+        isCoreLibraryDesugaringEnabled = true
     }
 
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_11.toString()
     }
 
+
     defaultConfig {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
         applicationId = "com.alarm.local_notification"
         // You can update the following values to match your application needs.
         // For more information, see: https://flutter.dev/to/review-gradle-config.
-        minSdk 21
-        targetSdk 34
+        multiDexEnabled = true
+        minSdk = 21
+        targetSdk = 35
         versionCode = flutter.versionCode
         versionName = flutter.versionName
     }
@@ -45,8 +47,8 @@ flutter {
 }
 
 dependencies {
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${kotlin.version}"
-    implementation 'androidx.window:window:1.0.0'
-    implementation 'androidx.window:window-java:1.0.0'
-    coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:1.2.2'
+    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+    implementation("androidx.window:window:1.0.0")
+    implementation("androidx.window:window-java:1.0.0")
+    coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.1.4")
 }

@@ -146,7 +146,7 @@ class LocalPushNotifications {
   }
 
   //푸시 알림 전체 취소
-  static Future cancelAll(int id) async {
+  static Future cancelAll() async {
     await _flutterLocalNotificationsPlugin.cancelAll();
   }
 }
